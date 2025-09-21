@@ -1,0 +1,8 @@
+country_code,country_name,region
+DE,Germany,EU
+FR,France,EU
+NL,Netherlands,EU
+GB,United Kingdom,Non-EU
+US,United States,North America
+ES,Spain,EU
+IT,Italy,EU

@@ -1,0 +1,164 @@
+x-airflow-env: &airflow-env
+  AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+  AIRFLOW__CORE__EXECUTOR: LocalExecutor
+  AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+  AIRFLOW__CORE__PARALLELISM: "2"
+  AIRFLOW__CORE__DAG_CONCURRENCY: "2"
+  AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG: "1"
+  AIRFLOW__SCHEDULER__MAX_THREADS: "1"
+  AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}
+  AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: "admin:admin,osama:user"
+  AIRFLOW__API__SECRET_KEY: ${AIRFLOW__API__SECRET_KEY}
+  AIRFLOW__API__URL: http://airflow-webserver:8080
+  AIRFLOW__API__HOST: 0.0.0.0
+  AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET}
+  AIRFLOW__API__PORT: "8080"
+  AIRFLOW__OPENLINEAGE__DISABLED: "True"
+  AIRFLOW__API__BASE_URL: http://airflow-webserver:8080
+  AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-webserver:8080/execution/
+  GOOGLE_APPLICATION_CREDENTIALS: /run/secrets/gcp_sa.json
+  AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+  AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: ${AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT:-google-cloud-platform://?extra__google_cloud_platform__project=${GCP_PROJECT_ID:-}&extra__google_cloud_platform__key_path=/run/secrets/gcp_sa.json&extra__google_cloud_platform__scopes=%5B%22https://www.googleapis.com/auth/cloud-platform%22%5D}
+
+x-airflow-vols: &airflow-vols
+  - ../airflow/dags:/opt/airflow/dags
+  - ../airflow/logs:/opt/airflow/logs
+  - ../airflow/plugins:/opt/airflow/plugins
+  - ../airflow/dbt:/opt/airflow/dbt
+  - ../airflow/data:/opt/airflow/data
+  - ../airflow/Dataset_Generation/CSV:/opt/airflow/Dataset_Generation/CSV
+  - ../SQL:/opt/SQL
+
+
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports: ["5432:5432"]
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    cpus: "0.50"
+    mem_limit: "512m"
+    pids_limit: 256
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 8192
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+
+  airflow-init:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        AIRFLOW_VERSION: "3.0.6"
+    image: unybrand-airflow:3.0.6
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      <<: *airflow-env
+    user: "0:0"
+    entrypoint: /bin/bash
+    command: >
+      -c "chown -R ${AIRFLOW_UID:-50000}:0 /opt/airflow /opt/SQL &&
+          sudo -E -u airflow airflow db migrate"
+    volumes: *airflow-vols
+    secrets:
+      - source: gcp_sa
+        target: gcp_sa.json
+        mode: 0440
+    cpus: "1.0"
+    mem_limit: "1.5g"
+    pids_limit: 512
+    ulimits:
+      nofile:
+        soft: 8192
+        hard: 16384
+
+  # airflow-create-user:
+  #   image: unybrand-airflow:3.0.6
+  #   depends_on:
+  #     airflow-init:
+  #       condition: service_completed_successfully
+  #   environment:
+  #     <<: *airflow-env
+  #   entrypoint: /bin/bash
+  #   command: >
+  #     -c "airflow users create
+  #         --username admin
+  #         --firstname Admin
+  #         --lastname User
+  #         --role Admin
+  #         --email admin@example.com
+  #         --password admin"
+  #   restart: "no"
+
+  airflow-webserver:
+    image: unybrand-airflow:3.0.6
+    restart: always
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+    environment:
+      <<: *airflow-env
+    user: "${AIRFLOW_UID:-50000}:0"
+    ports: ["8080:8080"]
+    command: api-server
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/v2/monitor/health || exit 1"]
+    volumes: *airflow-vols
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    secrets:
+      - source: gcp_sa
+        target: gcp_sa.json
+        mode: 0440
+    # cpus: "1.5"
+    # mem_limit: "1.5g"
+    # pids_limit: 512
+    # ulimits:
+    #   nofile:
+    #     soft: 8192
+    #     hard: 16384
+
+  airflow-scheduler:
+    image: unybrand-airflow:3.0.6
+    restart: always
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      airflow-webserver:
+        condition: service_healthy
+    environment:
+      <<: *airflow-env
+    user: "${AIRFLOW_UID:-50000}:0"
+    command: scheduler
+    volumes: *airflow-vols
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    secrets:
+      - source: gcp_sa
+        target: gcp_sa.json
+        mode: 0440
+    # cpus: "1.5"
+    # mem_limit: "1.5g"
+    # pids_limit: 512
+    # ulimits:
+    #   nofile:
+    #     soft: 8192
+    #     hard: 16384
+
+volumes:
+  postgres-data:
+
+secrets:
+  gcp_sa:
+    file: ../secrets/gcp-sa.json

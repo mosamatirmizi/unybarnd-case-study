@@ -1,0 +1,7 @@
+channel_code,description
+AFN,Fulfillment by Amazon
+MFN,Merchant Fulfilled Network
+Shopify-WH,Shopify Warehouse Fulfilled
+Shopify-MAN,Shopify Manual Fulfilled
+POS,In-store Fulfilled
+Wholesale,Distributor Fulfilled

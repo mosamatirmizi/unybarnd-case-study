@@ -1,0 +1,45 @@
+name: hitex_case_study
+version: 1.0.0
+config-version: 2
+
+profile: your_profile_name
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  hitex_case_study:
+    +persist_docs:
+      relation: true
+      columns: true
+    +on_schema_change: append_new_columns
+    raw:
+      +schema: l0_raw
+      +materialized: table
+      +tags: ["layer:l0_raw"]
+      +on_schema_change: fail
+      +contract.enforced: true
+    staging:
+      +schema: l1_staging
+      +materialized: view
+      +tags: ["layer:l1_staging"]
+    harmonized:
+      +schema: l2_harmonized
+      +materialized: table
+      +tags: ["layer:l2_harmonized"]
+    semantic:
+      +schema: l3_semantic
+      +materialized: table
+      +tags: ["layer:l3_semantic"]
+    analytics:
+      +schema: l4_analytics
+      +materialized: table
+      +tags: ["layer:l4_analytics"]

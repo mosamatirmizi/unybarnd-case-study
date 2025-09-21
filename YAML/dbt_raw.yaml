@@ -1,0 +1,593 @@
+sources:
+  - name: raw_amazon
+    database: hitex-db
+    schema: raw
+    tables:
+      - name: raw_amazon_order
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Amazon Marketplace order header (FBA/MCF)."
+        columns:
+          - name: amazon_order_id
+            tests: [not_null, unique]
+          - name: purchase_date
+          - name: last_update_date
+          - name: order_status
+          - name: fulfillment_channel
+          - name: sales_channel
+          - name: buyer_name
+          - name: buyer_email
+          - name: shipping_address_json
+          - name: currency
+          - name: order_total
+      - name: raw_amazon_order_item
+        loaded_at_field: ingested_at
+        columns:
+          - name: order_item_id
+            tests: [not_null, unique]
+          - name: amazon_order_id
+            tests: [not_null]
+          - name: asin
+          - name: seller_sku
+          - name: quantity_ordered
+          - name: item_price_amount
+          - name: tax_amount
+      - name: raw_amazon_shipment_item
+        loaded_at_field: ingested_at
+        columns:
+          - name: shipment_item_id
+            tests: [not_null, unique]
+          - name: shipment_id
+          - name: amazon_order_id
+          - name: ship_date
+          - name: delivery_date
+      - name: raw_amazon_settlement_tx
+        loaded_at_field: ingested_at
+        columns:
+          - name: settlement_id
+          - name: posted_date
+          - name: transaction_type
+          - name: amazon_order_id
+          - name: amount
+          - name: fee_type
+          - name: fee_amount
+      - name: raw_amazon_catalog
+        loaded_at_field: ingested_at
+        columns:
+          - name: asin
+          - name: seller_sku
+          - name: title
+          - name: brand
+          - name: model
+          - name: attributes_json
+      - name: raw_amazon_inventory_daily
+        loaded_at_field: ingested_at
+        columns:
+          - name: snapshot_date
+          - name: seller_sku
+          - name: fulfillment_center_id
+          - name: on_hand
+          - name: reserved
+          - name: inbound
+      - name: raw_amazon_returns
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Amazon FBA customer returns data."
+        columns:
+          - name: return_date
+          - name: amazon_order_id
+          - name: sku
+          - name: quantity
+          - name: reason
+          - name: status
+      - name: raw_amazon_reimbursements
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Amazon FBA reimbursements data."
+        columns:
+          - name: reimbursement_id
+            tests: [not_null, unique]
+          - name: amazon_order_id
+          - name: amount
+          - name: reason
+          - name: approval_date
+      - name: raw_amazon_inventory_aged
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Amazon FBA aged inventory data."
+        columns:
+          - name: snapshot_date
+          - name: sku
+            tests: [not_null]
+          - name: quantity
+          - name: age_category
+          - name: storage_fee
+      - name: raw_amazon_stranded_inventory
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Amazon FBA stranded inventory data."
+        columns:
+          - name: sku
+            tests: [not_null]
+          - name: quantity
+          - name: reason
+          - name: resolution_status
+      - name: raw_amazon_storage_fees
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Amazon FBA storage fees data."
+        columns:
+          - name: fee_date
+          - name: sku
+          - name: quantity
+          - name: fee_amount
+          - name: currency
+  - name: raw_shopify
+    database: hitex-db
+    schema: raw
+    tables:
+      - name: raw_shopify_order
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Shopify order header (DTC web/app)."
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: created_at
+          - name: processed_at
+          - name: financial_status
+          - name: fulfillment_status
+          - name: currency
+          - name: total_price
+          - name: customer_id
+          - name: source_name
+          - name: utm_source
+          - name: utm_medium
+          - name: utm_campaign
+      - name: raw_shopify_order_line
+        loaded_at_field: ingested_at
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: order_id
+            tests: [not_null]
+          - name: product_id
+          - name: variant_id
+          - name: sku
+          - name: quantity
+          - name: price
+      - name: raw_shopify_fulfillment
+        loaded_at_field: ingested_at
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: order_id
+          - name: status
+          - name: tracking_number
+          - name: created_at
+      - name: raw_shopify_transaction
+        loaded_at_field: ingested_at
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: order_id
+          - name: kind
+          - name: gateway
+          - name: amount
+          - name: processed_at
+      - name: raw_shopify_customer
+        loaded_at_field: ingested_at
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: email
+          - name: verified_email
+          - name: addresses_json
+      - name: raw_shopify_product
+        loaded_at_field: ingested_at
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: title
+          - name: vendor
+          - name: product_type
+          - name: status
+      - name: raw_shopify_inventory_daily
+        loaded_at_field: ingested_at
+        columns:
+          - name: snapshot_date
+          - name: inventory_item_id
+          - name: location_id
+          - name: available
+      - name: raw_shopify_refunds
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Shopify refunds data."
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: order_id
+          - name: created_at
+          - name: amount
+          - name: refund_line_items
+          - name: transactions
+      - name: raw_shopify_discount_codes
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Shopify discount codes data."
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: code
+          - name: value
+          - name: usage_limit
+          - name: starts_at
+          - name: ends_at
+          - name: applies_to
+      - name: raw_shopify_inventory_levels
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Shopify inventory levels data."
+        columns:
+          - name: inventory_item_id
+            tests: [not_null]
+          - name: location_id
+          - name: available
+          - name: updated_at
+      - name: raw_shopify_abandoned_checkouts
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Shopify abandoned checkouts data."
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: cart_token
+          - name: created_at
+          - name: updated_at
+          - name: total_price
+          - name: line_items
+      - name: raw_shopify_locations
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Shopify locations data."
+        columns:
+          - name: id
+            tests: [not_null, unique]
+          - name: name
+          - name: address1
+          - name: city
+          - name: country
+          - name: active
+  - name: raw_pos
+    database: hitex-db
+    schema: raw
+    tables:
+      - name: raw_pos_receipt
+        loaded_at_field: ingested_at
+        columns:
+          - name: receipt_id
+            tests: [not_null, unique]
+          - name: business_date
+          - name: store_id
+          - name: transaction_ts
+          - name: subtotal
+          - name: tax_amount
+          - name: total_amount
+      - name: raw_pos_receipt_line
+        loaded_at_field: ingested_at
+        columns:
+          - name: receipt_line_id
+            tests: [not_null, unique]
+          - name: receipt_id
+            tests: [not_null]
+          - name: product_id
+            tests: [not_null]
+          - name: quantity
+          - name: unit_price
+      - name: raw_pos_tender
+        loaded_at_field: ingested_at
+        columns:
+          - name: tender_id
+            tests: [not_null, unique]
+          - name: receipt_id
+            tests: [not_null]
+          - name: tender_type
+          - name: amount
+      - name: raw_pos_store
+        loaded_at_field: ingested_at
+        columns:
+          - name: store_id
+            tests: [not_null, unique]
+          - name: store_name
+          - name: address_json
+          - name: latitude
+          - name: longitude
+          - name: timezone
+      - name: raw_pos_inventory_daily
+        loaded_at_field: ingested_at
+        columns:
+          - name: snapshot_date
+          - name: store_id
+          - name: product_id
+            tests: [not_null]
+          - name: on_hand
+      - name: raw_pos_returns
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "POS returns data."
+        columns:
+          - name: return_id
+            tests: [not_null, unique]
+          - name: receipt_id
+          - name: product_id
+            tests: [not_null]
+          - name: quantity
+          - name: return_date
+          - name: reason
+          - name: amount
+      - name: raw_pos_product_category
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "POS product category data."
+        columns:
+          - name: category_id
+            tests: [not_null, unique]
+          - name: category_name
+          - name: description
+      - name: raw_pos_customer_loyalty
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "POS customer loyalty data."
+        columns:
+          - name: customer_id
+            tests: [not_null, unique]
+          - name: name
+          - name: contact_info
+          - name: points_balance
+          - name: last_purchase_date
+      - name: raw_pos_purchase_orders
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "POS purchase orders data."
+        columns:
+          - name: order_id
+            tests: [not_null, unique]
+          - name: supplier_id
+          - name: order_date
+          - name: product_id
+            tests: [not_null]
+          - name: quantity
+          - name: delivery_date
+      - name: raw_pos_discounts
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "POS discounts data."
+        columns:
+          - name: discount_id
+            tests: [not_null]
+          - name: receipt_id
+          - name: type
+          - name: value
+          - name: applied_date
+      - name: raw_pos_product
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "POS product details"
+        columns:
+          - name: product_id
+            tests: [not_null, unique]
+          - name: sku
+            description: "Stock Keeping Unit"
+          - name: product_name
+            description: "Name of the product"
+          - name: category_id
+            tests: [not_null]
+            description: "Foreign key to raw_pos_product_category"
+          - name: description
+            description: "Detailed description of the product"
+          - name: unit_price
+            description: "Price per unit"
+          - name: weight
+            description: "Weight of the product"
+          - name: dimensions
+            description: "Physical dimensions of the product"
+          - name: created_at
+            description: "Timestamp when the product was created"
+          - name: updated_at
+            description: "Timestamp of the last update"
+          - name: status
+            description: "Current status of the product"
+  - name: raw_wholesale
+    database: hitex-db
+    schema: raw
+    tables:
+      - name: raw_wholesale_account
+        loaded_at_field: ingested_at
+        columns:
+          - name: org_account_id
+            tests: [not_null, unique]
+          - name: account_name
+          - name: billing_terms
+          - name: credit_limit
+      - name: raw_wholesale_contract
+        loaded_at_field: ingested_at
+        columns:
+          - name: contract_id
+            tests: [not_null, unique]
+          - name: org_account_id
+          - name: start_date
+          - name: discount_type
+          - name: discount_value
+      - name: raw_wholesale_price_list
+        loaded_at_field: ingested_at
+        columns:
+          - name: price_list_id
+            tests: [not_null, unique]
+          - name: product_id
+          - name: currency
+          - name: contract_price
+          - name: effective_from
+      - name: raw_wholesale_order
+        loaded_at_field: ingested_at
+        columns:
+          - name: order_id
+            tests: [not_null, unique]
+          - name: order_number
+          - name: org_account_id
+          - name: order_ts
+          - name: status
+          - name: currency
+      - name: raw_wholesale_order_line
+        loaded_at_field: ingested_at
+        columns:
+          - name: order_line_id
+            tests: [not_null, unique]
+          - name: order_id
+            tests: [not_null]
+          - name: product_id
+          - name: quantity
+          - name: unit_price
+      - name: raw_wholesale_shipment_item
+        loaded_at_field: ingested_at
+        columns:
+          - name: shipment_item_id
+            tests: [not_null, unique]
+          - name: shipment_id
+          - name: order_id
+          - name: ship_date
+          - name: quantity
+      - name: raw_wholesale_invoice
+        loaded_at_field: ingested_at
+        columns:
+          - name: invoice_id
+            tests: [not_null, unique]
+          - name: order_id
+          - name: org_account_id
+          - name: invoice_date
+          - name: due_date
+          - name: amount_due
+      - name: raw_wholesale_payment_tx
+        loaded_at_field: ingested_at
+        columns:
+          - name: payment_tx_id
+            tests: [not_null, unique]
+          - name: invoice_id
+          - name: order_id
+          - name: tx_type
+          - name: amount
+          - name: tx_ts
+      - name: raw_wholesale_returns
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Wholesale returns data."
+        columns:
+          - name: return_id
+            tests: [not_null, unique]
+          - name: order_id
+          - name: product_id
+          - name: quantity
+          - name: return_date
+          - name: reason
+          - name: amount
+      - name: raw_wholesale_purchase_orders
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Wholesale purchase orders data."
+        columns:
+          - name: po_id
+            tests: [not_null, unique]
+          - name: supplier_id
+          - name: order_date
+          - name: product_id
+          - name: quantity
+          - name: expected_delivery
+          - name: status
+      - name: raw_wholesale_quotes
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Wholesale quotes data."
+        columns:
+          - name: quote_id
+            tests: [not_null, unique]
+          - name: org_account_id
+          - name: quote_date
+          - name: product_id
+          - name: quantity
+          - name: unit_price
+          - name: expiration_date
+      - name: raw_wholesale_inventory_transactions
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 24, period: hour } }
+        description: "Wholesale inventory transactions data."
+        columns:
+          - name: tx_id
+            tests: [not_null, unique]
+          - name: product_id
+          - name: location_id
+          - name: quantity
+          - name: tx_type
+          - name: tx_date
+      - name: raw_wholesale_warehouse
+        loaded_at_field: ingested_at
+        freshness: { warn_after: { count: 48, period: hour } }
+        description: "Wholesale warehouse data."
+        columns:
+          - name: warehouse_id
+            tests: [not_null, unique]
+          - name: name
+          - name: address
+          - name: capacity
+          - name: current_utilization
+  - name: raw_common
+    database: hitex-db
+    schema: raw
+    tables:
+      - name: raw_brand
+        loaded_at_field: ingested_at
+        columns:
+          - name: brand_id
+            tests: [unique]
+          - name: brand_name
+      - name: raw_supplier
+        loaded_at_field: ingested_at
+        columns:
+          - name: supplier_id
+            tests: [unique]
+          - name: supplier_name
+          - name: country
+      - name: raw_campaign
+        loaded_at_field: ingested_at
+        columns:
+          - name: campaign_id
+            tests: [unique]
+          - name: name
+          - name: channel
+          - name: start_ts
+          - name: end_ts
+      - name: raw_promotion
+        loaded_at_field: ingested_at
+        columns:
+          - name: promotion_id
+            tests: [unique]
+          - name: promo_code
+          - name: promo_type
+          - name: discount_type
+          - name: discount_value
+          - name: start_ts
+          - name: end_ts
+      - name: raw_fx_rate
+        loaded_at_field: ingested_at
+        columns:
+          - name: from_currency
+          - name: to_currency
+          - name: rate
+          - name: valid_from
+          - name: valid_to
+      - name: raw_tax_rule
+        loaded_at_field: ingested_at
+        columns:
+          - name: jurisdiction
+          - name: tax_category
+          - name: rate
+          - name: valid_from
+          - name: valid_to

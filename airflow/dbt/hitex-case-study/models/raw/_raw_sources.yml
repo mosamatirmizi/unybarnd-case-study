@@ -1,0 +1,1984 @@
+sources:
+- name: raw_amazon
+  database: stately-sentry-472319-k7
+  schema: raw
+  tables:
+  - name: raw_amazon_order
+    description: Amazon Marketplace order header (FBA/MCF).
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: amazon_order_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: purchase_date
+      description: UTC calendar date.
+    - name: last_update_date
+      description: UTC calendar date.
+    - name: order_status
+    - name: fulfillment_channel
+    - name: sales_channel
+    - name: buyer_name
+    - name: buyer_email
+    - name: shipping_address_json
+      description: JSON-formatted address with street, zip_code, city, and country
+        fields.
+    - name: currency
+      description: Currency code (EUR or GBP).
+    - name: order_total
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_order_item
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: order_date
+    - name: order_item_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: amazon_order_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: asin
+    - name: seller_sku
+    - name: quantity_ordered
+    - name: item_price_amount
+    - name: tax_amount
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_shipment_item
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: shipment_item_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: shipment_id
+      description: String identifier.
+    - name: amazon_order_id
+      description: String identifier.
+    - name: ship_date
+      description: UTC calendar date.
+    - name: delivery_date
+      description: UTC calendar date.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_settlement_tx
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: settlement_id
+      description: String identifier.
+    - name: posted_date
+      description: UTC calendar date.
+    - name: transaction_type
+    - name: amazon_order_id
+      description: String identifier.
+    - name: amount
+    - name: fee_type
+    - name: fee_amount
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_catalog
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: asin
+    - name: seller_sku
+    - name: title
+    - name: brand
+    - name: model
+    - name: attributes_json
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_inventory_daily
+    loaded_at_field: snapshot_date
+    columns:
+    - name: snapshot_date
+      description: UTC calendar date.
+    - name: seller_sku
+    - name: fulfillment_center_id
+      description: String identifier.
+    - name: on_hand
+    - name: reserved
+    - name: inbound
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_returns
+    description: Amazon FBA customer returns data.
+    loaded_at_field: return_date
+    columns:
+    - name: return_date
+      description: UTC calendar date.
+    - name: amazon_order_id
+      description: String identifier.
+    - name: sku
+    - name: quantity
+    - name: reason
+    - name: status
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_reimbursements
+    description: Amazon FBA reimbursements data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: reimbursement_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: amazon_order_id
+      description: String identifier.
+    - name: amount
+    - name: reason
+    - name: approval_date
+      description: UTC calendar date.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_inventory_aged
+    description: Amazon FBA aged inventory data.
+    loaded_at_field: snapshot_date
+    columns:
+    - name: snapshot_date
+      description: UTC calendar date.
+    - name: sku
+      tests:
+      - not_null
+    - name: quantity
+    - name: age_category
+    - name: storage_fee
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_stranded_inventory
+    description: Amazon FBA stranded inventory data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: sku
+      tests:
+      - not_null
+    - name: quantity
+    - name: reason
+    - name: resolution_status
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_amazon_storage_fees
+    description: Amazon FBA storage fees data.
+    loaded_at_field: fee_date
+    columns:
+    - name: fee_date
+      description: UTC calendar date.
+    - name: sku
+    - name: quantity
+    - name: fee_amount
+    - name: currency
+      description: Currency code (EUR or GBP).
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+- name: raw_shopify
+  database: stately-sentry-472319-k7
+  schema: raw
+  tables:
+  - name: raw_shopify_order
+    description: Shopify order header (DTC web/app).
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: created_at
+      description: UTC timestamp value.
+    - name: processed_at
+      description: UTC timestamp value.
+    - name: financial_status
+    - name: fulfillment_status
+    - name: currency
+      description: Currency code (EUR or GBP).
+    - name: total_items
+    - name: total_price
+    - name: customer_id
+      description: String identifier.
+    - name: source_name
+    - name: utm_source
+    - name: utm_medium
+    - name: utm_campaign
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_order_line
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: product_id
+      description: String identifier.
+    - name: variant_id
+      description: String identifier.
+    - name: sku
+    - name: quantity
+    - name: price
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_fulfillment
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_id
+      description: String identifier.
+    - name: status
+    - name: tracking_number
+    - name: created_at
+      description: UTC timestamp value.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_transaction
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_id
+      description: String identifier.
+    - name: kind
+    - name: gateway
+    - name: amount
+    - name: processed_at
+      description: UTC timestamp value.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_customer
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: email
+    - name: verified_email
+    - name: addresses_json
+      description: JSON-formatted address with street, zip_code, city, and country
+        fields.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: session_id
+      description: Session identifier derived from load context.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_product
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: title
+    - name: vendor
+    - name: product_type
+    - name: status
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_inventory_daily
+    loaded_at_field: snapshot_date
+    columns:
+    - name: snapshot_date
+      description: UTC calendar date.
+    - name: inventory_item_id
+      description: String identifier.
+    - name: location_id
+      description: String identifier.
+    - name: available
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_refunds
+    description: Shopify refunds data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_id
+      description: String identifier.
+    - name: created_at
+      description: UTC timestamp value.
+    - name: amount
+    - name: refund_line_items
+    - name: transactions
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_discount_codes
+    description: Shopify discount codes data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: code
+    - name: value
+    - name: usage_limit
+    - name: starts_at
+      description: UTC timestamp value.
+    - name: ends_at
+      description: UTC timestamp value.
+    - name: applies_to
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_inventory_levels
+    description: Shopify inventory levels data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: inventory_item_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: location_id
+      description: String identifier.
+    - name: available
+    - name: updated_at
+      description: UTC timestamp value.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_abandoned_checkouts
+    description: Shopify abandoned checkouts data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: cart_token
+    - name: created_at
+      description: UTC timestamp value.
+    - name: updated_at
+      description: UTC timestamp value.
+    - name: total_price
+    - name: line_items
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_shopify_locations
+    description: Shopify locations data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: name
+    - name: address1
+      description: Formatted street address string.
+    - name: city
+    - name: country
+    - name: active
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+- name: raw_pos
+  database: stately-sentry-472319-k7
+  schema: raw
+  tables:
+  - name: raw_pos_receipt
+    loaded_at_field: business_date
+    columns:
+    - name: receipt_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: business_date
+      description: UTC calendar date.
+    - name: store_id
+      description: String identifier.
+    - name: transaction_ts
+      description: UTC timestamp value.
+    - name: subtotal
+    - name: tax_amount
+    - name: total_amount
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_receipt_line
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: receipt_line_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: receipt_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: product_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: quantity
+    - name: unit_price
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_tender
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: tender_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: receipt_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: tender_type
+    - name: amount
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_store
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: store_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: store_name
+    - name: address_json
+      description: JSON-formatted address with street, zip_code, city, and country
+        fields.
+    - name: latitude
+    - name: longitude
+    - name: timezone
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_inventory_daily
+    loaded_at_field: snapshot_date
+    columns:
+    - name: snapshot_date
+      description: UTC calendar date.
+    - name: store_id
+      description: String identifier.
+    - name: product_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: on_hand
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_returns
+    description: POS returns data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: return_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: receipt_id
+      description: String identifier.
+    - name: product_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: quantity
+    - name: return_date
+      description: UTC calendar date.
+    - name: reason
+    - name: amount
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_product_category
+    description: POS product category data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: category_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: category_name
+    - name: description
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_customer_loyalty
+    description: POS customer loyalty data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: customer_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: name
+    - name: email
+    - name: contact_info
+    - name: points_balance
+    - name: last_purchase_date
+      description: UTC calendar date.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_purchase_orders
+    description: POS purchase orders data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: order_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: supplier_id
+      description: String identifier.
+    - name: order_date
+      description: UTC calendar date.
+    - name: product_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: quantity
+    - name: delivery_date
+      description: UTC calendar date.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_discounts
+    description: POS discounts data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: discount_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: receipt_id
+      description: String identifier.
+    - name: type
+    - name: value
+    - name: applied_date
+      description: UTC calendar date.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_pos_product
+    description: POS product details
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: product_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: sku
+    - name: product_name
+    - name: category_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: description
+    - name: unit_price
+    - name: weight
+    - name: dimensions
+    - name: created_at
+      description: UTC timestamp value.
+    - name: updated_at
+      description: UTC timestamp value.
+    - name: status
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+- name: raw_wholesale
+  database: stately-sentry-472319-k7
+  schema: raw
+  tables:
+  - name: raw_wholesale_account
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: org_account_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: account_name
+    - name: billing_terms
+    - name: credit_limit
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_contract
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: contract_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: org_account_id
+      description: String identifier.
+    - name: start_date
+      description: UTC calendar date.
+    - name: discount_type
+    - name: discount_value
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_price_list
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: price_list_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: product_id
+      description: String identifier.
+    - name: currency
+      description: Currency code (EUR or GBP).
+    - name: contract_price
+    - name: effective_from
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_order
+    loaded_at_field: order_ts
+    columns:
+    - name: order_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_number
+    - name: org_account_id
+      description: String identifier.
+    - name: order_ts
+      description: UTC timestamp value.
+    - name: status
+    - name: currency
+      description: Currency code (EUR or GBP).
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_order_line
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: order_line_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_id
+      tests:
+      - not_null
+      description: String identifier.
+    - name: product_id
+      description: String identifier.
+    - name: quantity
+    - name: unit_price
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_shipment_item
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: shipment_item_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: shipment_id
+      description: String identifier.
+    - name: order_id
+      description: String identifier.
+    - name: ship_date
+      description: UTC calendar date.
+    - name: quantity
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_invoice
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: invoice_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_id
+      description: String identifier.
+    - name: org_account_id
+      description: String identifier.
+    - name: invoice_date
+      description: UTC calendar date.
+    - name: due_date
+      description: UTC calendar date.
+    - name: amount_due
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_payment_tx
+    loaded_at_field: tx_ts
+    columns:
+    - name: payment_tx_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: invoice_id
+      description: String identifier.
+    - name: order_id
+      description: String identifier.
+    - name: tx_type
+    - name: amount
+    - name: tx_ts
+      description: UTC timestamp value.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_returns
+    description: Wholesale returns data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: return_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: order_id
+      description: String identifier.
+    - name: product_id
+      description: String identifier.
+    - name: quantity
+    - name: return_date
+      description: UTC calendar date.
+    - name: reason
+    - name: amount
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_purchase_orders
+    description: Wholesale purchase orders data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: po_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: supplier_id
+      description: String identifier.
+    - name: order_date
+      description: UTC calendar date.
+    - name: product_id
+      description: String identifier.
+    - name: quantity
+    - name: expected_delivery
+    - name: status
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_quotes
+    description: Wholesale quotes data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: quote_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: org_account_id
+      description: String identifier.
+    - name: quote_date
+      description: UTC calendar date.
+    - name: product_id
+      description: String identifier.
+    - name: quantity
+    - name: unit_price
+    - name: expiration_date
+      description: UTC calendar date.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_inventory_transactions
+    description: Wholesale inventory transactions data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: tx_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: product_id
+      description: String identifier.
+    - name: location_id
+      description: String identifier.
+    - name: quantity
+    - name: tx_type
+    - name: tx_date
+      description: UTC calendar date.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_wholesale_warehouse
+    description: Wholesale warehouse data.
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: warehouse_id
+      tests:
+      - not_null
+      - unique
+      description: String identifier.
+    - name: name
+    - name: address
+      description: Formatted street address string.
+    - name: capacity
+    - name: current_utilization
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+- name: raw_common
+  database: stately-sentry-472319-k7
+  schema: raw
+  tables:
+  - name: raw_brand
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: brand_id
+      description: String identifier.
+    - name: brand_name
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_supplier
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: supplier_id
+      description: String identifier.
+    - name: supplier_name
+    - name: country
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_campaign
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: campaign_id
+      description: String identifier.
+    - name: name
+    - name: channel
+    - name: start_ts
+      description: UTC timestamp value.
+    - name: end_ts
+      description: UTC timestamp value.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_promotion
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: promotion_id
+      description: String identifier.
+    - name: promo_code
+    - name: promo_type
+    - name: discount_type
+    - name: discount_value
+    - name: start_ts
+      description: UTC timestamp value.
+    - name: end_ts
+      description: UTC timestamp value.
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_fx_rate
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: from_currency
+      description: Currency code (EUR or GBP).
+    - name: to_currency
+      description: Currency code (EUR or GBP).
+    - name: rate
+    - name: valid_from
+    - name: valid_to
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null
+  - name: raw_tax_rule
+    loaded_at_field: ingested_at
+    columns:
+    - name: ingested_at
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: jurisdiction
+    - name: tax_category
+    - name: rate
+    - name: valid_from
+    - name: valid_to
+    - name: load_at
+      description: Load timestamp (UTC).
+      tests:
+      - not_null
+    - name: load_id
+      description: String identifier.
+      tests:
+      - not_null
+    - name: source_file
+      tests:
+      - not_null
+    - name: source_ts
+      description: UTC timestamp value.
+      tests:
+      - not_null
+    - name: ingestion_uuid
+      description: String identifier.
+      tests:
+      - not_null

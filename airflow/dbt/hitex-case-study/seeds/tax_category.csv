@@ -1,0 +1,4 @@
+tax_category,description,default_rate
+standard,Standard VAT,0.20
+reduced,Reduced VAT,0.07
+zero,Zero-rated,0.00

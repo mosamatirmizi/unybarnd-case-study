@@ -1,0 +1,19 @@
+your_profile_name:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: stately-sentry-472319-k7
+      dataset: analytics
+      keyfile: /keys/gcp-sa.json
+      location: EU   # or US
+      threads: 4
+    prod:
+      type: bigquery
+      method: service-account
+      project: stately-sentry-472319-k7
+      dataset: analytics
+      keyfile: /keys/gcp-sa.json
+      location: EU   # or US
+      threads: 4

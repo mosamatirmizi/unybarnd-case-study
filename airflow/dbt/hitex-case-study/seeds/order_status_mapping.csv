@@ -1,0 +1,15 @@
+source_system,raw_status,standard_status
+Amazon,pending,Pending
+Amazon,paid,Completed
+Amazon,fulfilled,Completed
+Amazon,cancelled,Cancelled
+Amazon,refunded,Refunded
+Shopify,paid,Completed
+Shopify,pending,Pending
+Shopify,refunded,Refunded
+Shopify,voided,Cancelled
+POS,active,Completed
+POS,inactive,Cancelled
+Wholesale,open,Pending
+Wholesale,closed,Completed
+Wholesale,cancelled,Cancelled

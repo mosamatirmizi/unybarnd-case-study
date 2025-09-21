@@ -1,0 +1,35 @@
+# Python / venv
+venv/
+__pycache__/
+*.pyc
+
+# uv
+.uv/
+uv.lock
+
+
+
+# Airflow
+.airflow/
+airflow/dbt/hitex-case-study/target/
+airflow/dbt/hitex-case-study/dbt_packages/
+dbt/logs/
+
+airflow/dbt/hitex-case-study/macros/
+
+airflow/data
+logs/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+
+# secrets
+secrets/
+*.key
+*.pem
+*.json
+
+backup/

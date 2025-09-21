@@ -1,0 +1,201 @@
+account_id,company_name,company_email,company_phone,company_address,company_country,company_city,company_credit_limit,company_currency
+3cc0b320-1ff8-4040-a985-14d1f1559bfc,Velocity Performance Holdings,velocity_performance_holdings@company.com,+49-711-966-2716,"861 Princes St, Hamburg, 20095",Germany,Hamburg,14545,EUR
+b6ee6aa5-4443-44ca-82f7-41e316a548d7,Flex Outfitters Holdings,flex_outfitters_holdings@company.com,+49-556-167-7539,"199 Fleet St, Munich, 80331",Germany,Munich,25488,EUR
+ea1e8176-2a08-4c65-ba6d-3bfeaadbc1eb,Stride Outfitters Holdings,stride_outfitters_holdings@company.com,+44-824-876-8152,"202 Fleet St, London, SW1A 1AA",United Kingdom,London,18541,GBP
+9dcf068b-1cc3-4ba2-9b3c-863252d6298f,Zen Arena Holdings,zen_arena_holdings@company.com,+49-876-258-9078,"885 Baker St, Berlin, 10117",Germany,Berlin,15547,EUR
+b9129e08-cc22-470e-ace6-41405ca66ea6,Core Collective Holdings,core_collective_holdings@company.com,+44-320-114-6065,"52 High St, London, SW1A 1AA",United Kingdom,London,12206,GBP
+ab8d8953-ee02-464c-9520-058239b26a23,Pulse Performance Holdings,pulse_performance_holdings@company.com,+44-635-485-6071,"620 King's Rd, Manchester, M2 5DB",United Kingdom,Manchester,22582,GBP
+646bce0a-3010-4e0a-8654-0207e8d6b7b9,Core Athletics Holdings,core_athletics_holdings@company.com,+49-650-907-3044,"449 Speicherstadt, Berlin, 10117",Germany,Berlin,16977,EUR
+a17f6734-81cb-449e-ab69-c6367cfe7343,Pulse Outfitters Holdings,pulse_outfitters_holdings@company.com,+49-200-998-5265,"48 Regent St, Munich, 80331",Germany,Munich,11593,EUR
+6e917743-ffe2-4774-aa72-7e3134b79630,Peak Performance Holdings,peak_performance_holdings@company.com,+44-608-687-2075,"340 Piccadilly, London, SW1A 1AA",United Kingdom,London,17409,GBP
+b7e88260-4118-4f96-a3ca-f58e73449e8f,Stride Dynamics Holdings,stride_dynamics_holdings@company.com,+44-965-384-2979,"538 Oxford St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,10553,GBP
+ddc7c570-1f0c-480a-9d2b-d5d52fbb2520,Stride Athletics Holdings,stride_athletics_holdings@company.com,+49-566-751-1119,"467 Fleet St, Berlin, 10117",Germany,Berlin,29250,EUR
+3c2db29a-e49a-4488-9b33-d213d7d7e60f,Core Athletics Holdings,core_athletics_holdings@company.com,+44-667-199-2830,"65 Maximilianstrasse, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,18823,GBP
+20ca2a9e-78dc-477a-8daf-d9013fab6274,Zen Outfitters Holdings,zen_outfitters_holdings@company.com,+49-601-294-6727,"880 King's Rd, Munich, 80331",Germany,Munich,10889,EUR
+01476f10-9cd2-471a-b50b-e95ab85815ca,Apex Studios Holdings,apex_studios_holdings@company.com,+49-783-812-7370,"810 Queen St, Munich, 80331",Germany,Munich,11874,EUR
+1b0c6767-3567-4ed1-8583-95ff2ae6665e,Core Gear Holdings,core_gear_holdings@company.com,+44-742-736-6149,"661 High St, Manchester, M2 5DB",United Kingdom,Manchester,11330,GBP
+abfbcf1c-6736-484e-87e5-baa7f5270efb,Stride Co Holdings,stride_co_holdings@company.com,+49-492-277-7129,"82 Marktplatz, Munich, 80331",Germany,Munich,14441,EUR
+c57e3125-9b30-4819-973f-59e4e7642a3f,Flex Co Holdings,flex_co_holdings@company.com,+44-404-799-4240,"952 Oxford St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,25881,GBP
+81ff9908-0949-422c-9212-55c06c337abf,Core Performance Holdings,core_performance_holdings@company.com,+44-331-672-3530,"434 Baker St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,20630,GBP
+9cc40d22-42dd-465f-9148-29e3a8dcf66b,Flex Dynamics Holdings,flex_dynamics_holdings@company.com,+49-893-276-9782,"395 Maximilianstrasse, Berlin, 10117",Germany,Berlin,22745,EUR
+54ebff94-cc51-4b2e-9490-9ea3929854e1,Zen Athletics Holdings,zen_athletics_holdings@company.com,+49-500-544-9641,"432 Marktplatz, Munich, 80331",Germany,Munich,17986,EUR
+f7caba17-93c7-469a-895f-f7a314560d3c,Flex Performance Holdings,flex_performance_holdings@company.com,+49-311-397-4733,"773 Royal Mile, Hamburg, 20095",Germany,Hamburg,29686,EUR
+20bbf72e-b1c8-4096-9cf8-6cbc6e689284,Velocity Arena Holdings,velocity_arena_holdings@company.com,+44-690-619-7867,"29 Baker St, London, SW1A 1AA",United Kingdom,London,16825,GBP
+a0988c66-70f9-4c6e-98af-bc58444778cf,Pulse Gear Holdings,pulse_gear_holdings@company.com,+44-869-286-1561,"529 King's Rd, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,10257,GBP
+62acda76-bd09-4178-b57e-c616f88295f9,Momentum Co Holdings,momentum_co_holdings@company.com,+49-617-294-8479,"231 Queen St, Hamburg, 20095",Germany,Hamburg,16009,EUR
+e179d6ad-7891-41d7-8e97-2565d982ef05,Zen Studios Holdings,zen_studios_holdings@company.com,+44-696-454-4993,"667 Leopoldstrasse, London, SW1A 1AA",United Kingdom,London,21963,GBP
+38e0b4d8-2846-41dc-87ff-16a6f29a98c7,Flex Studios Holdings,flex_studios_holdings@company.com,+44-905-254-3194,"820 High St, Manchester, M2 5DB",United Kingdom,Manchester,19314,GBP
+1727e618-933d-46fb-8a8e-f26230910986,Apex Gear Holdings,apex_gear_holdings@company.com,+44-798-347-5298,"961 High St, London, SW1A 1AA",United Kingdom,London,28027,GBP
+f70337c7-af00-4df0-83a9-5ae1ba694b48,Momentum Collective Holdings,momentum_collective_holdings@company.com,+44-452-858-2350,"480 Piccadilly, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,27398,GBP
+f22af2ae-c627-42a7-ac14-8abaf7deeeb3,Peak Gear Holdings,peak_gear_holdings@company.com,+44-434-831-9785,"846 Speicherstadt, London, SW1A 1AA",United Kingdom,London,12303,GBP
+d4b8a65f-b243-4159-a1e3-8af19b32939b,Momentum Arena Holdings,momentum_arena_holdings@company.com,+44-580-464-8451,"124 Regent St, London, SW1A 1AA",United Kingdom,London,15618,GBP
+e2f42f94-b55f-4460-8b3b-d1c1383787d2,Stride Performance Holdings,stride_performance_holdings@company.com,+49-963-557-8322,"360 Royal Mile, Hamburg, 20095",Germany,Hamburg,23635,EUR
+59a31364-d01b-4bdc-8827-28a1f8a8fc86,Summit Collective Holdings,summit_collective_holdings@company.com,+49-592-213-5509,"872 Regent St, Munich, 80331",Germany,Munich,14348,EUR
+27c6e66b-c11a-4641-8176-1b0a4b4be28b,Zen Arena Holdings,zen_arena_holdings@company.com,+49-344-431-6219,"636 Princes St, Berlin, 10117",Germany,Berlin,11987,EUR
+9134a46f-67d6-4019-a958-16d4d2048156,Zen Athletics Holdings,zen_athletics_holdings@company.com,+49-729-348-4930,"22 Queen St, Hamburg, 20095",Germany,Hamburg,18798,EUR
+0960afac-be79-4c93-87cc-aae1f1ad9408,Velocity Collective Holdings,velocity_collective_holdings@company.com,+44-368-533-8710,"894 Piccadilly, London, SW1A 1AA",United Kingdom,London,19888,GBP
+13bddbc6-2f44-4b3d-8ab9-d07267fbfa80,Apex Gear Holdings,apex_gear_holdings@company.com,+44-254-928-2625,"228 Speicherstadt, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,24625,GBP
+ced0eab9-6014-42df-82e7-1d098308745c,Velocity Arena Holdings,velocity_arena_holdings@company.com,+44-867-423-1273,"666 Maximilianstrasse, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,22733,GBP
+baf4211c-aa28-4dab-a527-10c936df2be2,Apex Labs Holdings,apex_labs_holdings@company.com,+49-923-143-8034,"480 Piccadilly, Berlin, 10117",Germany,Berlin,18683,EUR
+282947b3-a0fb-41bc-b25b-f5f34e1e702c,Stride Performance Holdings,stride_performance_holdings@company.com,+44-390-921-6081,"933 Princes St, London, SW1A 1AA",United Kingdom,London,23107,GBP
+bb7bf7f9-0481-405f-8b3d-b0745cbadf53,Peak Studios Holdings,peak_studios_holdings@company.com,+44-623-747-8891,"75 King's Rd, London, SW1A 1AA",United Kingdom,London,24261,GBP
+ab6887dd-f864-4922-89e8-fb531c63bc11,Summit Athletics Holdings,summit_athletics_holdings@company.com,+44-751-455-6983,"490 Kurfürstendamm, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,11182,GBP
+f81da3d5-2c29-46f2-921a-a04f561c9514,Pulse Arena Holdings,pulse_arena_holdings@company.com,+49-531-955-4920,"423 Marktplatz, Munich, 80331",Germany,Munich,20230,EUR
+e94af714-865d-4a1c-bf26-7a97d9d19af6,Stride Co Holdings,stride_co_holdings@company.com,+49-268-139-5300,"925 Unter den Linden, Berlin, 10117",Germany,Berlin,18795,EUR
+ecf34b1c-0391-4007-9233-49e6711ac02f,Apex Outfitters Holdings,apex_outfitters_holdings@company.com,+44-320-558-5907,"227 Maximilianstrasse, Manchester, M2 5DB",United Kingdom,Manchester,27777,GBP
+2db8e57d-29c7-4d40-8284-0377f58d69ad,Peak Performance Holdings,peak_performance_holdings@company.com,+49-554-602-3682,"122 Royal Mile, Berlin, 10117",Germany,Berlin,11764,EUR
+a93fb245-72e8-46be-b623-84a9c7d748e0,Pulse Dynamics Holdings,pulse_dynamics_holdings@company.com,+44-387-702-5605,"667 Regent St, London, SW1A 1AA",United Kingdom,London,11727,GBP
+5cf0f5cc-c58f-4e5a-8916-b48ecfb56905,Stride Labs Holdings,stride_labs_holdings@company.com,+49-769-272-4561,"312 Kurfürstendamm, Berlin, 10117",Germany,Berlin,29369,EUR
+e814d623-2639-4aa5-94cb-864965315676,Apex Outfitters Holdings,apex_outfitters_holdings@company.com,+49-789-846-1509,"209 Queen St, Berlin, 10117",Germany,Berlin,27248,EUR
+453014f7-d04d-4b0c-b23d-bb5487d18030,Zen Labs Holdings,zen_labs_holdings@company.com,+49-904-145-5000,"105 Leopoldstrasse, Munich, 80331",Germany,Munich,10950,EUR
+15dcb417-d393-4cc0-8083-368e58490771,Zen Labs Holdings,zen_labs_holdings@company.com,+44-596-125-8862,"95 Baker St, Manchester, M2 5DB",United Kingdom,Manchester,13126,GBP
+a36ed148-be7e-43bb-ae8f-ef000f12046d,Summit Gear Holdings,summit_gear_holdings@company.com,+49-697-342-4618,"870 Princes St, Berlin, 10117",Germany,Berlin,16158,EUR
+868a0218-1c26-4160-95b2-c51bf71c296c,Core Performance Holdings,core_performance_holdings@company.com,+49-502-632-4694,"190 Fleet St, Munich, 80331",Germany,Munich,25445,EUR
+3a473e02-4cb5-4297-8660-eb828d28ab82,Pulse Gear Holdings,pulse_gear_holdings@company.com,+44-781-938-6712,"581 Piccadilly, Manchester, M2 5DB",United Kingdom,Manchester,16442,GBP
+6a87bf4e-525f-432c-9a49-a319a5ea2ed1,Flex Collective Holdings,flex_collective_holdings@company.com,+49-930-861-4087,"125 High St, Hamburg, 20095",Germany,Hamburg,26887,EUR
+26ab448d-c692-46d6-88e1-09a7bb761b42,Zen Labs Holdings,zen_labs_holdings@company.com,+49-382-846-9574,"393 Princes St, Hamburg, 20095",Germany,Hamburg,19826,EUR
+e55fc715-f16d-4b8b-991c-05720c78d155,Velocity Arena Holdings,velocity_arena_holdings@company.com,+44-881-105-3565,"236 Queen St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,16376,GBP
+de4c5c3a-5521-477f-8aad-7652ec49a5bb,Stride Studios Holdings,stride_studios_holdings@company.com,+44-774-764-2649,"670 Piccadilly, Manchester, M2 5DB",United Kingdom,Manchester,23003,GBP
+96401e40-f4aa-42c6-bf65-990dce551006,Apex Dynamics Holdings,apex_dynamics_holdings@company.com,+44-541-392-9105,"877 Oxford St, London, SW1A 1AA",United Kingdom,London,23663,GBP
+0c69b25c-a00a-4335-a492-aa58fdc86662,Core Labs Holdings,core_labs_holdings@company.com,+44-893-971-5182,"617 Piccadilly, London, SW1A 1AA",United Kingdom,London,17335,GBP
+7dd8498a-860d-47d6-a838-b564e36f1305,Velocity Collective Holdings,velocity_collective_holdings@company.com,+49-249-601-5461,"421 Speicherstadt, Hamburg, 20095",Germany,Hamburg,10282,EUR
+461e1351-86cc-47ac-8d39-0d3a2485dcb2,Summit Studios Holdings,summit_studios_holdings@company.com,+49-625-667-4817,"708 Fleet St, Munich, 80331",Germany,Munich,26719,EUR
+dda137f9-1360-4a01-89b4-6673e6c19ca0,Stride Collective Holdings,stride_collective_holdings@company.com,+49-647-362-6850,"981 Unter den Linden, Hamburg, 20095",Germany,Hamburg,16367,EUR
+33cfa30a-d16d-4560-9b23-741c01fbfcf1,Core Collective Holdings,core_collective_holdings@company.com,+49-760-578-9544,"716 Unter den Linden, Munich, 80331",Germany,Munich,24769,EUR
+c8a4f28f-d6b4-4b07-90a8-d2a4fcaf8cdd,Peak Dynamics Holdings,peak_dynamics_holdings@company.com,+49-654-403-2757,"627 Queen St, Berlin, 10117",Germany,Berlin,23447,EUR
+17d90b63-8f64-418f-b063-50acecdc7de7,Flex Dynamics Holdings,flex_dynamics_holdings@company.com,+44-925-548-9590,"597 Fleet St, Manchester, M2 5DB",United Kingdom,Manchester,13895,GBP
+45d291f9-b153-421b-9d1e-e28b8d40b83f,Peak Co Holdings,peak_co_holdings@company.com,+44-271-707-3367,"344 Oxford St, Manchester, M2 5DB",United Kingdom,Manchester,21396,GBP
+513c03d7-1e99-47e6-a8ad-64f589609cb8,Pulse Studios Holdings,pulse_studios_holdings@company.com,+49-934-248-7749,"262 Princes St, Munich, 80331",Germany,Munich,20476,EUR
+6ef61773-5c63-4bca-8c4c-7cff83abf96e,Velocity Dynamics Holdings,velocity_dynamics_holdings@company.com,+44-391-726-3040,"85 Leopoldstrasse, London, SW1A 1AA",United Kingdom,London,23297,GBP
+25773933-a888-44de-9a56-56ed6ca640fd,Apex Athletics Holdings,apex_athletics_holdings@company.com,+49-201-535-6420,"240 Queen St, Hamburg, 20095",Germany,Hamburg,18884,EUR
+1dd0cc51-e4b7-4526-89b2-4266c38a3e7b,Momentum Performance Holdings,momentum_performance_holdings@company.com,+49-501-281-9631,"517 Princes St, Hamburg, 20095",Germany,Hamburg,15771,EUR
+41196d41-e4af-4d02-a6dd-1395e3358677,Summit Athletics Holdings,summit_athletics_holdings@company.com,+49-769-286-2864,"405 Maximilianstrasse, Berlin, 10117",Germany,Berlin,12822,EUR
+4cdcfd04-0259-46f9-9025-b3cb43c33ba4,Zen Outfitters Holdings,zen_outfitters_holdings@company.com,+49-278-251-8646,"543 Oxford St, Munich, 80331",Germany,Munich,27256,EUR
+852eb1e8-3177-48ee-b18b-5d783f7a7422,Core Dynamics Holdings,core_dynamics_holdings@company.com,+49-799-527-8124,"383 Leopoldstrasse, Hamburg, 20095",Germany,Hamburg,16556,EUR
+1f20aee3-0b48-4fe9-aebd-a61d07a0bdfc,Peak Outfitters Holdings,peak_outfitters_holdings@company.com,+49-971-642-2851,"234 Royal Mile, Berlin, 10117",Germany,Berlin,21572,EUR
+7e2ae309-c7c3-4c04-a046-284d69c165d9,Summit Athletics Holdings,summit_athletics_holdings@company.com,+49-499-338-9647,"504 Speicherstadt, Hamburg, 20095",Germany,Hamburg,20444,EUR
+9e6d4779-b23d-44aa-9fb2-cb12cb20ff8b,Apex Studios Holdings,apex_studios_holdings@company.com,+49-315-511-2723,"946 Kurfürstendamm, Berlin, 10117",Germany,Berlin,22675,EUR
+d47daadf-cc18-49f3-a08d-ab8d792a9b2e,Momentum Outfitters Holdings,momentum_outfitters_holdings@company.com,+49-616-804-9952,"952 Oxford St, Berlin, 10117",Germany,Berlin,11170,EUR
+98219721-5c2d-4758-8e21-e2e17ad517a3,Momentum Outfitters Holdings,momentum_outfitters_holdings@company.com,+44-294-910-3318,"170 Marktplatz, Manchester, M2 5DB",United Kingdom,Manchester,27107,GBP
+bc3cd39b-8d69-4144-aacc-1cb51d65cf4c,Momentum Athletics Holdings,momentum_athletics_holdings@company.com,+44-470-751-5960,"746 King's Rd, Manchester, M2 5DB",United Kingdom,Manchester,11701,GBP
+2b38e0ab-4a2e-49ad-8128-2564eb2dd8b3,Core Co Holdings,core_co_holdings@company.com,+44-535-565-3535,"678 Fleet St, London, SW1A 1AA",United Kingdom,London,14882,GBP
+4dc40b2e-2d19-47ba-acab-bcf2b5dcd3d6,Peak Co Holdings,peak_co_holdings@company.com,+44-780-544-2432,"919 Fleet St, Manchester, M2 5DB",United Kingdom,Manchester,27527,GBP
+45415ff7-44e2-4d73-8218-e6eef6164c2d,Peak Studios Holdings,peak_studios_holdings@company.com,+49-703-401-9584,"569 Baker St, Berlin, 10117",Germany,Berlin,28111,EUR
+790feb30-7d68-4573-ac67-3cb413ac1195,Velocity Collective Holdings,velocity_collective_holdings@company.com,+49-246-605-4242,"790 High St, Munich, 80331",Germany,Munich,28372,EUR
+2e860ddf-7089-4464-ae9f-0c2128035038,Pulse Performance Holdings,pulse_performance_holdings@company.com,+49-222-947-2699,"473 Piccadilly, Munich, 80331",Germany,Munich,23477,EUR
+b096fde8-39bd-4802-a606-0d479c902c9e,Summit Gear Holdings,summit_gear_holdings@company.com,+44-264-189-2725,"75 Speicherstadt, Manchester, M2 5DB",United Kingdom,Manchester,29569,GBP
+f172a47d-3aae-4b20-a4a5-7c7cb078fb83,Core Co Holdings,core_co_holdings@company.com,+44-479-599-6017,"868 King's Rd, Manchester, M2 5DB",United Kingdom,Manchester,22799,GBP
+5e11fd4f-79a4-40cd-90b6-75a4d7d41bd5,Apex Arena Holdings,apex_arena_holdings@company.com,+44-627-553-6116,"889 Queen St, Manchester, M2 5DB",United Kingdom,Manchester,11984,GBP
+91840312-7498-4bd8-91cd-c1736a933829,Core Co Holdings,core_co_holdings@company.com,+49-902-516-2467,"732 Speicherstadt, Berlin, 10117",Germany,Berlin,29048,EUR
+7cfe641e-303e-4ea9-a51a-8822228736c9,Velocity Athletics Holdings,velocity_athletics_holdings@company.com,+44-408-830-1157,"566 Regent St, Manchester, M2 5DB",United Kingdom,Manchester,17310,GBP
+8fe33cc8-d05c-4afa-90ab-22c903ef304c,Flex Dynamics Holdings,flex_dynamics_holdings@company.com,+44-297-677-6390,"961 Princes St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,21349,GBP
+44c2d8bc-dd29-4adf-9f78-ba38946fb02f,Zen Athletics Holdings,zen_athletics_holdings@company.com,+44-976-110-3377,"851 Regent St, London, SW1A 1AA",United Kingdom,London,21992,GBP
+faccccc9-d167-4d5c-9af3-239073b8b0fa,Velocity Arena Holdings,velocity_arena_holdings@company.com,+49-586-749-7131,"728 Baker St, Berlin, 10117",Germany,Berlin,21714,EUR
+a085080b-19e2-4896-a6fe-e9445e35b251,Velocity Studios Holdings,velocity_studios_holdings@company.com,+44-661-783-1687,"938 Maximilianstrasse, Manchester, M2 5DB",United Kingdom,Manchester,19737,GBP
+4205d75b-09f9-49e8-8772-2128681451b9,Zen Athletics Holdings,zen_athletics_holdings@company.com,+49-902-285-1330,"430 Queen St, Munich, 80331",Germany,Munich,27908,EUR
+ea3bd866-2c87-4ce0-bd3a-bac3c4ae1dde,Apex Collective Holdings,apex_collective_holdings@company.com,+49-710-818-2693,"691 Royal Mile, Berlin, 10117",Germany,Berlin,13136,EUR
+34edb8f6-965b-4cb6-a1a2-a17f3f9ca569,Zen Dynamics Holdings,zen_dynamics_holdings@company.com,+44-594-719-6886,"202 Princes St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,16543,GBP
+53b1821b-22e7-47af-b945-c9cbb74ff263,Core Labs Holdings,core_labs_holdings@company.com,+49-891-471-5871,"738 Kurfürstendamm, Berlin, 10117",Germany,Berlin,24082,EUR
+aca22c15-594c-494c-ba2c-7d616db6bc8f,Velocity Arena Holdings,velocity_arena_holdings@company.com,+49-974-240-8131,"579 Queen St, Munich, 80331",Germany,Munich,16684,EUR
+29d19f67-8c54-47b2-beff-805b0c781696,Zen Performance Holdings,zen_performance_holdings@company.com,+44-540-418-4661,"857 Oxford St, London, SW1A 1AA",United Kingdom,London,11649,GBP
+562370ef-7b7a-4d20-b479-d5336abdd8bf,Zen Outfitters Holdings,zen_outfitters_holdings@company.com,+49-480-194-8139,"185 Queen St, Munich, 80331",Germany,Munich,13124,EUR
+9dd6fdb7-b90e-4a71-878f-dc84ec1748dd,Velocity Arena Holdings,velocity_arena_holdings@company.com,+49-772-117-8193,"958 High St, Munich, 80331",Germany,Munich,12367,EUR
+f651e5f1-8922-4623-b5e9-09215c6eb7fa,Stride Arena Holdings,stride_arena_holdings@company.com,+49-211-510-1654,"637 Maximilianstrasse, Berlin, 10117",Germany,Berlin,15708,EUR
+d9b06b11-76df-4d88-a17f-1b5be638ed55,Momentum Performance Holdings,momentum_performance_holdings@company.com,+49-296-899-1113,"932 Princes St, Hamburg, 20095",Germany,Hamburg,14433,EUR
+9c84f192-6a9d-4d86-bba6-047b0e061140,Summit Outfitters Holdings,summit_outfitters_holdings@company.com,+49-625-341-6172,"839 Piccadilly, Berlin, 10117",Germany,Berlin,24852,EUR
+cd2f641b-1957-4047-ac99-591781142c29,Zen Outfitters Holdings,zen_outfitters_holdings@company.com,+49-913-924-1921,"709 Queen St, Munich, 80331",Germany,Munich,19756,EUR
+4e07f734-e2c8-445e-971a-43e2577e0fa4,Velocity Labs Holdings,velocity_labs_holdings@company.com,+49-784-326-2106,"275 Maximilianstrasse, Munich, 80331",Germany,Munich,15789,EUR
+4a364ddc-5f28-4a09-ae74-b5a67263b63e,Stride Dynamics Holdings,stride_dynamics_holdings@company.com,+44-417-398-3003,"681 Queen St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,17716,GBP
+420d2513-bac8-4a6b-8c75-35178390fa8b,Core Outfitters Holdings,core_outfitters_holdings@company.com,+44-876-107-1412,"86 Kurfürstendamm, London, SW1A 1AA",United Kingdom,London,18983,GBP
+f91e1a62-77f4-4254-aea0-8c69a7a22f8c,Summit Arena Holdings,summit_arena_holdings@company.com,+44-266-391-5600,"157 High St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,15733,GBP
+a98d32e6-0162-4842-9473-9f8d63e4cfe3,Core Arena Holdings,core_arena_holdings@company.com,+44-987-553-3442,"791 Speicherstadt, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,16563,GBP
+0bfb10a6-933c-41c1-879c-88d57c5b5956,Momentum Co Holdings,momentum_co_holdings@company.com,+44-243-697-5326,"196 Queen St, London, SW1A 1AA",United Kingdom,London,18643,GBP
+08111a1e-9ab1-4ffe-ae69-715c6fa43270,Flex Dynamics Holdings,flex_dynamics_holdings@company.com,+44-533-804-3610,"937 Maximilianstrasse, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,12264,GBP
+e8af080a-cc75-4cf1-8523-97821d314f05,Peak Outfitters Holdings,peak_outfitters_holdings@company.com,+44-786-292-2377,"794 King's Rd, London, SW1A 1AA",United Kingdom,London,24451,GBP
+d8bd8fe7-e833-48cc-8a33-6dbbe4a25f76,Summit Studios Holdings,summit_studios_holdings@company.com,+44-243-775-8639,"786 Unter den Linden, London, SW1A 1AA",United Kingdom,London,17368,GBP
+214db9d9-9ce3-4c77-9800-14bc08a8e69e,Stride Dynamics Holdings,stride_dynamics_holdings@company.com,+49-805-282-5076,"457 Fleet St, Munich, 80331",Germany,Munich,27634,EUR
+c2f75c93-5805-400e-b29c-563def876ade,Pulse Performance Holdings,pulse_performance_holdings@company.com,+49-828-297-5399,"813 Marktplatz, Munich, 80331",Germany,Munich,12077,EUR
+e9562df0-94c7-4797-a539-358d813e9b64,Flex Dynamics Holdings,flex_dynamics_holdings@company.com,+49-622-114-9795,"120 King's Rd, Munich, 80331",Germany,Munich,13271,EUR
+1ede0362-fa07-4d3c-b247-e6f5ad8b89f0,Zen Dynamics Holdings,zen_dynamics_holdings@company.com,+44-505-960-7840,"104 King's Rd, Manchester, M2 5DB",United Kingdom,Manchester,26474,GBP
+b7fabdb3-6e0d-4a68-afcc-9eeec07b1a59,Pulse Labs Holdings,pulse_labs_holdings@company.com,+44-848-894-9508,"669 Speicherstadt, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,20312,GBP
+61f82ece-9bd3-4a2f-b04d-66b2e940e39f,Apex Co Holdings,apex_co_holdings@company.com,+44-268-969-7562,"29 Piccadilly, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,14156,GBP
+dd7d6655-f2c7-478f-bc2b-2fdefba36cfd,Velocity Arena Holdings,velocity_arena_holdings@company.com,+44-582-165-1687,"41 Maximilianstrasse, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,10248,GBP
+b5eafdcb-442f-4726-bc71-6716174356e0,Core Arena Holdings,core_arena_holdings@company.com,+49-646-263-1146,"672 Princes St, Berlin, 10117",Germany,Berlin,20211,EUR
+6ab98fec-b00e-4122-85b4-37b1f016cc4f,Summit Collective Holdings,summit_collective_holdings@company.com,+44-212-118-7634,"328 Piccadilly, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,17774,GBP
+2030df77-799e-4d6f-a1bc-fcf282845946,Stride Labs Holdings,stride_labs_holdings@company.com,+49-355-221-1335,"830 Oxford St, Berlin, 10117",Germany,Berlin,16600,EUR
+3d1a6fa4-9bab-4340-aee9-425589e17660,Apex Dynamics Holdings,apex_dynamics_holdings@company.com,+49-635-274-8814,"867 Kurfürstendamm, Munich, 80331",Germany,Munich,16629,EUR
+4547b73d-ff63-44c0-bcfe-51868ad13a90,Velocity Dynamics Holdings,velocity_dynamics_holdings@company.com,+44-829-426-8202,"500 King's Rd, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,27268,GBP
+0d8ceb1d-6751-455f-ab47-e9611d2c129a,Summit Studios Holdings,summit_studios_holdings@company.com,+49-668-506-2836,"55 Queen St, Berlin, 10117",Germany,Berlin,11427,EUR
+c6dd27fa-fc8d-49da-8f6c-3eed0ca2a3dd,Summit Studios Holdings,summit_studios_holdings@company.com,+44-902-860-7592,"317 Queen St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,26939,GBP
+ab1e7e1c-a0da-4764-b649-251fe6d7ebf5,Zen Co Holdings,zen_co_holdings@company.com,+44-433-999-3594,"909 Kurfürstendamm, Manchester, M2 5DB",United Kingdom,Manchester,21547,GBP
+bbe4151a-1173-4bfa-b64c-db762d2b0673,Stride Collective Holdings,stride_collective_holdings@company.com,+49-586-646-5803,"656 Baker St, Munich, 80331",Germany,Munich,21842,EUR
+d5a9cc22-28db-41d9-b9db-d64c812814e3,Summit Dynamics Holdings,summit_dynamics_holdings@company.com,+49-524-390-1343,"466 Fleet St, Munich, 80331",Germany,Munich,23073,EUR
+734c0740-144b-4a11-b046-c8fb22fa9944,Stride Athletics Holdings,stride_athletics_holdings@company.com,+44-267-890-7307,"295 Princes St, London, SW1A 1AA",United Kingdom,London,11381,GBP
+8ec3dd87-3731-4d79-b343-fcd29cc34fc6,Flex Arena Holdings,flex_arena_holdings@company.com,+44-622-424-6224,"452 Baker St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,19933,GBP
+582febc0-9523-418e-a1c3-4879f5a7f9bb,Summit Co Holdings,summit_co_holdings@company.com,+44-435-776-7043,"134 High St, Manchester, M2 5DB",United Kingdom,Manchester,13854,GBP
+f670c8a9-dcff-441a-93df-c2d44ad9b7fa,Momentum Performance Holdings,momentum_performance_holdings@company.com,+49-800-507-7696,"939 Fleet St, Munich, 80331",Germany,Munich,24193,EUR
+1fb63976-9cad-4e6e-a2eb-f31d67afca43,Summit Co Holdings,summit_co_holdings@company.com,+44-582-229-9278,"936 Fleet St, London, SW1A 1AA",United Kingdom,London,25652,GBP
+6a6bd61e-5914-4d95-854f-bb88c7d175cd,Peak Performance Holdings,peak_performance_holdings@company.com,+49-828-896-7674,"139 Kurfürstendamm, Munich, 80331",Germany,Munich,29680,EUR
+ff691b04-b89a-4954-9061-b2e08c644fe8,Zen Arena Holdings,zen_arena_holdings@company.com,+44-406-759-9807,"797 Baker St, Manchester, M2 5DB",United Kingdom,Manchester,20101,GBP
+9e6d344f-01d6-4916-bd1a-ec88b2fcce14,Velocity Performance Holdings,velocity_performance_holdings@company.com,+44-212-106-6235,"591 Piccadilly, London, SW1A 1AA",United Kingdom,London,24348,GBP
+8a2e34b4-aeff-4218-abbb-47875183a634,Momentum Arena Holdings,momentum_arena_holdings@company.com,+44-446-439-7950,"361 Regent St, London, SW1A 1AA",United Kingdom,London,27366,GBP
+a027eeb0-b30f-4b07-bc6a-043932ddd1e4,Zen Collective Holdings,zen_collective_holdings@company.com,+49-359-713-7189,"752 Oxford St, Berlin, 10117",Germany,Berlin,18807,EUR
+c9cffe9a-4e9c-420f-9f9a-d4ac8696e1c1,Zen Labs Holdings,zen_labs_holdings@company.com,+49-998-839-9954,"100 Kurfürstendamm, Berlin, 10117",Germany,Berlin,19206,EUR
+23e1b34b-68a1-4eef-b387-c9f409d88495,Flex Collective Holdings,flex_collective_holdings@company.com,+49-832-936-9133,"588 Unter den Linden, Munich, 80331",Germany,Munich,27943,EUR
+75c6aa7f-524b-4228-b395-f5cc0de8b7e5,Velocity Gear Holdings,velocity_gear_holdings@company.com,+44-403-628-9494,"622 Fleet St, London, SW1A 1AA",United Kingdom,London,17766,GBP
+2f29bdc1-4aa0-4570-a4ac-5d3d354d5a74,Velocity Performance Holdings,velocity_performance_holdings@company.com,+49-672-579-8212,"62 Piccadilly, Hamburg, 20095",Germany,Hamburg,22007,EUR
+7d49d0ec-5dea-4410-a4e8-9859ad085d01,Pulse Collective Holdings,pulse_collective_holdings@company.com,+44-773-278-8257,"607 Royal Mile, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,28118,GBP
+11763b89-9eb2-4315-9670-e5e652432453,Summit Arena Holdings,summit_arena_holdings@company.com,+49-722-396-4354,"186 Marktplatz, Hamburg, 20095",Germany,Hamburg,15142,EUR
+30ee6804-f624-494e-889e-b4201081220f,Zen Studios Holdings,zen_studios_holdings@company.com,+49-202-450-7430,"600 Unter den Linden, Berlin, 10117",Germany,Berlin,20291,EUR
+ea1557c8-f5ea-4929-9dcc-b73ac2f39134,Zen Gear Holdings,zen_gear_holdings@company.com,+44-829-624-3190,"562 Baker St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,20942,GBP
+8d161942-341e-469a-98ac-c1e164497665,Peak Athletics Holdings,peak_athletics_holdings@company.com,+44-732-393-5465,"511 Marktplatz, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,22544,GBP
+df183844-4e17-4273-847f-b517f38876f4,Apex Performance Holdings,apex_performance_holdings@company.com,+44-721-787-3564,"468 Baker St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,10610,GBP
+8547995b-fec3-45a6-831d-913ac0e17e3c,Pulse Dynamics Holdings,pulse_dynamics_holdings@company.com,+49-678-209-5597,"744 Baker St, Hamburg, 20095",Germany,Hamburg,14793,EUR
+17a10091-62d5-4e8f-931b-4a2a93c94056,Stride Performance Holdings,stride_performance_holdings@company.com,+44-746-959-1286,"403 Kurfürstendamm, London, SW1A 1AA",United Kingdom,London,11242,GBP
+aefb8e92-519f-4013-9277-44c5973976ca,Velocity Performance Holdings,velocity_performance_holdings@company.com,+44-402-948-5765,"754 King's Rd, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,16205,GBP
+1243126b-37f0-45a0-8228-4e3b4322f85f,Apex Labs Holdings,apex_labs_holdings@company.com,+49-327-380-3167,"85 King's Rd, Berlin, 10117",Germany,Berlin,15636,EUR
+8c2d8083-d2e9-40aa-8fca-6ed5cbc03475,Velocity Arena Holdings,velocity_arena_holdings@company.com,+49-694-535-5263,"118 Piccadilly, Munich, 80331",Germany,Munich,29469,EUR
+019c9f53-c0a0-4127-bf5c-0ed4ddaf9483,Velocity Athletics Holdings,velocity_athletics_holdings@company.com,+49-794-833-7166,"403 Baker St, Hamburg, 20095",Germany,Hamburg,20852,EUR
+c85512d9-72e6-4d1f-ac79-e7afc750e9c4,Core Studios Holdings,core_studios_holdings@company.com,+44-996-793-2037,"821 Princes St, London, SW1A 1AA",United Kingdom,London,21605,GBP
+df4f6d0e-1492-4b76-bff8-e3d393832cae,Zen Performance Holdings,zen_performance_holdings@company.com,+44-259-528-9391,"170 Queen St, Manchester, M2 5DB",United Kingdom,Manchester,20278,GBP
+4d8c8a2c-6ed1-4923-a853-002ccf5b6bec,Pulse Co Holdings,pulse_co_holdings@company.com,+49-232-813-7723,"856 Speicherstadt, Munich, 80331",Germany,Munich,10359,EUR
+e6e99543-c9b9-4430-800b-5d5b5bbef483,Core Labs Holdings,core_labs_holdings@company.com,+49-622-925-8199,"549 Princes St, Hamburg, 20095",Germany,Hamburg,20329,EUR
+80cc0a3a-dcd0-4db8-8fe8-4a92943a9d8e,Peak Outfitters Holdings,peak_outfitters_holdings@company.com,+44-315-195-1832,"44 Speicherstadt, London, SW1A 1AA",United Kingdom,London,24780,GBP
+0c2a1fd0-6c9a-457e-a8d5-5e5d6f508616,Apex Arena Holdings,apex_arena_holdings@company.com,+49-581-803-1794,"82 Royal Mile, Munich, 80331",Germany,Munich,17960,EUR
+5a2efd41-73a4-4768-b3e4-92c3059bebb4,Pulse Arena Holdings,pulse_arena_holdings@company.com,+49-713-918-6975,"460 Princes St, Munich, 80331",Germany,Munich,24482,EUR
+b2ce3d31-e152-41db-9577-01f8fddd3582,Momentum Co Holdings,momentum_co_holdings@company.com,+44-788-520-5276,"363 Fleet St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,17174,GBP
+9bd5d34f-1aa3-4585-9d66-6b5c7ed9c72c,Flex Studios Holdings,flex_studios_holdings@company.com,+44-735-607-2577,"174 Speicherstadt, Manchester, M2 5DB",United Kingdom,Manchester,24173,GBP
+e9e84876-ad9a-4f3e-8719-47d912052d19,Pulse Co Holdings,pulse_co_holdings@company.com,+49-413-904-5875,"752 Fleet St, Hamburg, 20095",Germany,Hamburg,17556,EUR
+82d5c497-4d20-4231-b4c9-586e223e549c,Core Collective Holdings,core_collective_holdings@company.com,+44-935-130-4582,"430 Queen St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,11229,GBP
+983b5d21-2ec1-458a-9e6e-c2df7a0d3f33,Momentum Studios Holdings,momentum_studios_holdings@company.com,+49-643-490-9494,"781 Leopoldstrasse, Berlin, 10117",Germany,Berlin,24918,EUR
+6e9d19c1-e0f1-4609-825f-1eb4c93289ef,Apex Outfitters Holdings,apex_outfitters_holdings@company.com,+49-221-505-1784,"467 Fleet St, Hamburg, 20095",Germany,Hamburg,10976,EUR
+80fd76b1-33e3-486f-a32b-f74198339197,Peak Dynamics Holdings,peak_dynamics_holdings@company.com,+44-538-684-1829,"812 King's Rd, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,28634,GBP
+c46a352c-56de-4d4a-b5f8-e3dd32af892f,Pulse Studios Holdings,pulse_studios_holdings@company.com,+49-596-504-4514,"229 Oxford St, Munich, 80331",Germany,Munich,14861,EUR
+d66b6e79-1234-46d5-b78e-d2de62b72185,Apex Studios Holdings,apex_studios_holdings@company.com,+49-304-218-3239,"475 Princes St, Berlin, 10117",Germany,Berlin,18341,EUR
+b0d69a9c-2250-4fdb-84af-e8c94972e2a8,Core Gear Holdings,core_gear_holdings@company.com,+44-474-766-2395,"442 Marktplatz, Manchester, M2 5DB",United Kingdom,Manchester,13788,GBP
+ded3dd9e-f4cd-4211-81b8-093ae6993265,Momentum Performance Holdings,momentum_performance_holdings@company.com,+49-886-813-6114,"411 Piccadilly, Berlin, 10117",Germany,Berlin,17839,EUR
+54c9a2aa-05c9-45c0-8ec8-bb71cf033793,Apex Gear Holdings,apex_gear_holdings@company.com,+49-687-633-8468,"665 Regent St, Berlin, 10117",Germany,Berlin,13534,EUR
+fc515da8-fc8f-4245-a2ee-522950444f61,Pulse Co Holdings,pulse_co_holdings@company.com,+44-419-367-6457,"611 Regent St, Manchester, M2 5DB",United Kingdom,Manchester,27291,GBP
+d86912e2-5d9a-4e81-8724-41c7b27886d5,Velocity Dynamics Holdings,velocity_dynamics_holdings@company.com,+44-813-946-1134,"345 King's Rd, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,23428,GBP
+d06993f9-d1a9-468f-b7e7-9afeb51990fd,Stride Performance Holdings,stride_performance_holdings@company.com,+49-686-581-7640,"364 Baker St, Berlin, 10117",Germany,Berlin,29454,EUR
+fd990299-0f4c-4635-8da5-8a66e58dc797,Zen Athletics Holdings,zen_athletics_holdings@company.com,+49-839-775-5450,"555 Maximilianstrasse, Hamburg, 20095",Germany,Hamburg,19185,EUR
+48e691f6-335d-4634-a23f-ad593c9cca8f,Summit Gear Holdings,summit_gear_holdings@company.com,+49-308-555-3986,"729 Kurfürstendamm, Hamburg, 20095",Germany,Hamburg,24690,EUR
+3f1e037c-07fd-472b-81ec-567843fa6868,Peak Dynamics Holdings,peak_dynamics_holdings@company.com,+44-935-470-3037,"162 Royal Mile, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,13459,GBP
+ea9b1671-46b2-4c32-b099-584fd6e027c4,Flex Collective Holdings,flex_collective_holdings@company.com,+49-870-690-8931,"389 Queen St, Hamburg, 20095",Germany,Hamburg,26840,EUR
+9dcdc038-1a05-4252-9f38-09ab87ecad0d,Summit Athletics Holdings,summit_athletics_holdings@company.com,+44-946-522-4070,"514 Piccadilly, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,29926,GBP
+2b815f2d-86bf-43a2-9003-7dfa8bbc5304,Peak Outfitters Holdings,peak_outfitters_holdings@company.com,+49-256-710-5294,"816 Piccadilly, Munich, 80331",Germany,Munich,26294,EUR
+2bd48f93-276b-4f7d-b860-c33c5d3ac432,Core Gear Holdings,core_gear_holdings@company.com,+49-420-507-2880,"605 Royal Mile, Hamburg, 20095",Germany,Hamburg,21278,EUR
+7b637876-24a3-4e3f-b0aa-d5fada628153,Peak Studios Holdings,peak_studios_holdings@company.com,+44-371-157-6955,"149 King's Rd, London, SW1A 1AA",United Kingdom,London,18886,GBP
+9bbf3659-1964-4f47-8d5c-c2e97f0ca55d,Peak Arena Holdings,peak_arena_holdings@company.com,+49-667-632-5479,"896 Maximilianstrasse, Hamburg, 20095",Germany,Hamburg,20784,EUR
+18277cf0-b41a-4b9d-929f-ee41ffea24e2,Velocity Studios Holdings,velocity_studios_holdings@company.com,+44-608-548-5337,"105 High St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,16163,GBP
+c535859a-dd08-414b-b1cf-2bf5a3675139,Flex Performance Holdings,flex_performance_holdings@company.com,+49-524-660-6341,"540 Princes St, Berlin, 10117",Germany,Berlin,20118,EUR
+b33db72d-7078-442a-b731-a79b03790c79,Summit Gear Holdings,summit_gear_holdings@company.com,+49-559-205-4535,"108 Kurfürstendamm, Hamburg, 20095",Germany,Hamburg,18396,EUR
+deb4d257-b741-49d6-8b0b-9bb79f8f31e3,Velocity Arena Holdings,velocity_arena_holdings@company.com,+49-577-679-8723,"246 Oxford St, Hamburg, 20095",Germany,Hamburg,20162,EUR
+3878bfd9-94c7-423b-b919-758336d047c2,Stride Labs Holdings,stride_labs_holdings@company.com,+44-795-478-8996,"741 Royal Mile, Manchester, M2 5DB",United Kingdom,Manchester,20247,GBP
+4528fb0a-1768-43fe-8de5-0416d7846a36,Flex Co Holdings,flex_co_holdings@company.com,+44-871-949-5766,"281 Regent St, Manchester, M2 5DB",United Kingdom,Manchester,18509,GBP
+dff91498-34ca-4855-a910-95c3a75158d7,Momentum Collective Holdings,momentum_collective_holdings@company.com,+44-235-586-6837,"586 Speicherstadt, London, SW1A 1AA",United Kingdom,London,17138,GBP
+48e6bb13-d29a-48f3-940f-3b1387df908b,Apex Co Holdings,apex_co_holdings@company.com,+44-384-592-1561,"602 Piccadilly, London, SW1A 1AA",United Kingdom,London,16319,GBP
+99100cb1-961d-47e3-800d-876aadf70f99,Pulse Dynamics Holdings,pulse_dynamics_holdings@company.com,+44-641-452-1836,"544 Maximilianstrasse, London, SW1A 1AA",United Kingdom,London,14527,GBP
+372abc87-d92c-4e86-804c-14c2dc97ce15,Zen Co Holdings,zen_co_holdings@company.com,+49-592-245-3232,"706 Fleet St, Hamburg, 20095",Germany,Hamburg,15501,EUR
+87407eda-2b7e-464b-accf-b1e79bbc4d53,Pulse Dynamics Holdings,pulse_dynamics_holdings@company.com,+44-210-591-2865,"124 Queen St, Edinburgh, EH2 2DF",United Kingdom,Edinburgh,21437,GBP
+42fcb242-843d-4d2b-97b9-f2f18e69b1e3,Core Dynamics Holdings,core_dynamics_holdings@company.com,+44-657-519-5626,"459 Piccadilly, London, SW1A 1AA",United Kingdom,London,24465,GBP

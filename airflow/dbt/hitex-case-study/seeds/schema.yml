@@ -1,0 +1,239 @@
+version: 2
+seeds:
+- name: order_status_mapping
+  description: Map raw source-system order statuses to a unified standard status.
+  columns:
+  - name: source_system
+    tests:
+    - not_null
+    description: Source system name, e.g., Amazon, Shopify, POS, Wholesale.
+  - name: raw_status
+    tests:
+    - not_null
+    description: Original status value from the source.
+  - name: standard_status
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - Pending
+        - Completed
+        - Cancelled
+        - Refunded
+    description: Unified status used across all channels.
+  tests:
+  - unique:
+      column_name: (source_system || '|' || raw_status)
+- name: fulfillment_channel
+  description: Reference list of fulfillment/fulfillment-network channel codes.
+  columns:
+  - name: channel_code
+    tests:
+    - not_null
+    - unique
+  - name: description
+    tests:
+    - not_null
+- name: sales_channel
+  description: Reference list of sales channel codes used across the platform.
+  columns:
+  - name: channel_code
+    tests:
+    - not_null
+    - unique
+    - accepted_values:
+        values:
+        - AMZ
+        - DTC
+        - POS
+        - WS
+  - name: channel_name
+    tests:
+    - not_null
+- name: currency
+  description: Reference currency table.
+  columns:
+  - name: currency_code
+    tests:
+    - not_null
+    - unique
+    - accepted_values:
+        values:
+        - USD
+        - EUR
+        - GBP
+  - name: symbol
+    tests:
+    - not_null
+  - name: decimals
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - 0
+        - 2
+- name: country_region
+  description: Country to region mapping for geographic roll-ups.
+  columns:
+  - name: country_code
+    tests:
+    - not_null
+    - unique
+  - name: country_name
+    tests:
+    - not_null
+  - name: region
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - EU
+        - Non-EU
+        - North America
+- name: tax_category
+  description: Tax categories with default fallback rates.
+  columns:
+  - name: tax_category
+    tests:
+    - not_null
+    - unique
+    - accepted_values:
+        values:
+        - standard
+        - reduced
+        - zero
+  - name: description
+    tests:
+    - not_null
+  - name: default_rate
+    tests:
+    - not_null
+- name: inventory_age_bucket
+  description: Age buckets for aged inventory analytics.
+  columns:
+  - name: age_bucket
+    tests:
+    - not_null
+    - unique
+  - name: days_min
+    tests:
+    - not_null
+  - name: days_max
+    tests:
+    - not_null
+  tests:
+  - relationships:
+      to: ref('inventory_age_bucket')
+      field: age_bucket
+- name: customer
+  description: Seed customer master records for local development and testing.
+  columns:
+  - name: customer_id
+    tests:
+    - not_null
+    - unique
+    description: String identifier (e.g., '550e8400-e29b-41d4-a716-446655440000').
+  - name: first_name
+    tests:
+    - not_null
+  - name: last_name
+    tests:
+    - not_null
+  - name: email
+    tests:
+    - not_null
+    - unique
+  - name: phone
+    description: Optional phone number in E.164 or local format.
+  - name: country
+    tests:
+    - not_null
+  - name: city
+    tests:
+    - not_null
+  - name: address_json
+    description: 'JSON-formatted address with street, zip_code, city, and country
+      fields. Example: {"street": "123 Baker St", "zip_code": "SW1A 1AA", "city":
+      "London", "country": "United Kingdom"}.'
+- name: accounts
+  description: Sample B2B account records with credit limits for wholesale scenarios.
+  columns:
+  - name: account_id
+    tests:
+    - not_null
+    - unique
+    description: String identifier (e.g., '550e8400-e29b-41d4-a716-446655440000').
+  - name: company_name
+    tests:
+    - not_null
+  - name: company_email
+    tests:
+    - not_null
+  - name: company_phone
+  - name: company_address
+    description: 'Formatted street address string. Example: ''123 Baker St, London
+      SW1A 1AA''.'
+  - name: company_country
+    tests:
+    - not_null
+  - name: city
+    tests:
+    - not_null
+  - name: company_credit_limit
+    tests:
+    - not_null
+  - name: company_currency
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - EUR
+        - GBP
+    description: Currency code (EUR or GBP).
+- name: products
+  description: Gym and sports product catalog seed for local testing.
+  columns:
+  - name: product_id
+    tests:
+    - not_null
+    - unique
+    description: String identifier (e.g., '550e8400-e29b-41d4-a716-446655440000').
+  - name: asin
+    tests:
+    - not_null
+  - name: seller_sku
+    tests:
+    - not_null
+  - name: title
+    tests:
+    - not_null
+  - name: brand
+    tests:
+    - not_null
+  - name: model
+  - name: product_type
+    tests:
+    - not_null
+  - name: status
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - Available
+        - OutOfStock
+  - name: quantity
+    tests:
+    - not_null
+  - name: attributes_json
+    description: JSON payload of additional product metadata.
+  - name: price
+    tests:
+    - not_null
+    description: Unit price used for seed data QA scenarios.
+  - name: currency
+    tests:
+    - not_null
+    - accepted_values:
+        values:
+        - EUR
+    description: Currency code corresponding to `price`.
