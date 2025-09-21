@@ -58,3 +58,8 @@ Log in to the Airflow web UI at `http://localhost:8080` using the `admin:admin` 
 - Ensure the `AIRFLOW__CORE__FERNET_KEY` and `AIRFLOW__API__SECRET_KEY` variables are present; missing values will prevent the containers from starting.
 - If DAG changes do not appear, confirm they exist under `airflow/dags` and the scheduler container is healthy.
 - Use `docker compose ps` to inspect container health checks and restart failed services.
+
+
+## DataGeneration Server
+
+- Ensure to enable the `airflow/Dataset_Generation/API/server.py` before triggering the raw_amazon_catalog and raw_amazon_order ingestion pipeline.
